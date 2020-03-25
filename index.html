@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="html">
+  <head>
+    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+    <meta charset="utf-8">
+    
+    <link rel="stylesheet" href="style.css">
+
+    <title></title>
+  </head>
+
+  <body>
+
+    <!-- BACKGROUND -->
+    <div id="background1"></div>
+    <div id="background2"></div>
+    <div id="background_bottom"></div>
+    <div id="background_left"></div>
+    <div id="siat_tasto_home"></div>
+    <div id="siat_scritta"></div>
+
+    <!-- NAV -->
+    <nav id="nav">
+      <div id="a1" class="a"></div>
+      <div id="a2" class="a">Soluzioni</div>
+      <div id="a4" class="a">Prodotti</div>
+      <div id="a5"class="a">Chi siamo</div>
+    </nav>
+
+    <!-- FRECCIA -->
+    <a class="a3"  onclick="fscroll()" href="#background2">
+      <div id="informazioni">Info</div>
+      <div id="freccia" href="#background2"></div>
+    </a>
+    
+    <!-- BURGER -->
+    <div class="menu_1" id="menu-btn" onclick="fburger()">
+      <div class="menu" id="menu1"></div>
+      <div class="menu" id="menu2"></div>
+      <div class="menu" id="menu3"></div>
+    </div>
+
+    <!-- TENDINA -->
+    <div id="tendina">  <!-- posso ottimizzare spostando la classe principale in "li" e utilizzare il gruppo a come ".classe a" -->
+
+        <a class="link-tendina" href="#">Storia</a>
+        <a class="link-tendina" href="#">Applicazioni</a>
+        <a class="link-tendina" href="#">Vantaggi</a>
+        <a class="link-tendina" href="#">Soluzioni</a>
+
+        <a class="sottolink-tendina" href="#">Analisi e progettazione</a>
+        <a class="sottolink-tendina" href="#">Custom made solution</a>
+        <a class="sottolink-tendina" href="#">Team di specialisti</a>
+        <a class="sottolink-tendina" href="#">Rispetto per l'ambiente</a>
+
+        <a class="link-tendina" href="#">Prodotti</a>
+
+        <a class="sottolink-tendina" href="#">Recopack</a>
+        <a class="sottolink-tendina" href="#">Duplex</a>
+        <a class="sottolink-tendina" href="#">Calorpack</a>
+        <a class="sottolink-tendina" href="#">Firepack</a>
+
+        <a class="link-tendina" href="#">Chi Siamo</a>
+
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.1.0/anime.min.js" integrity="sha256-98Q574VkbV+PkxXCKSgL6jVq9mrVbS7uCdA+vt0sLS8=" crossorigin="anonymous"></script>
+    <script src="app.js"></script>
+
+  </body>
+
+</html>
+
+
+<!-- <svg class="freccia-tendina1" width="26" height="115" viewBox="0 0 26 115" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M0 115L0 0L1 0L1 115H0Z" stroke="white" stroke-width="1"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M26 25H1V24H26V25Z" stroke="white" stroke-width="1"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M26 55H1V54H26V55Z" stroke="white" stroke-width="1"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M26 85H1V84H26V85Z" stroke="white" stroke-width="1"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M26 115H1V114H26V115Z" stroke="white" stroke-width="1"/>
+</svg>
+ -->

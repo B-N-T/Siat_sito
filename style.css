@@ -1,0 +1,264 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.html{
+  scroll-behavior: auto;
+}
+    
+body{
+  font-family: 'Poppins'
+}
+
+/* BACKGROUND */
+#background1{
+  background-image:url('immagini/sfondo_home.png');
+  background-size:100% 100%;
+  height: 100vh;
+  width:100%;
+  position:absolute;
+  z-index: -3;
+}
+      
+#background2{
+  background-image:url('immagini/sfondo_home2.png');
+  background-size:100% 100%;
+  height: 100vh;
+  width:100%;
+  position:absolute;
+  top:100vh;
+  z-index:0;
+}
+      
+#background_bottom{
+  background-image:url('immagini/sfondo_home_bottom.png');
+  background-size:100% 100%;
+  background-repeat: no-repeat;
+  height:33.333vh;
+  width:100%;
+  position:absolute;
+  z-index: 0;
+  top:66.6666vh;
+}
+
+#background_left{
+  background-image:url('immagini/sfondo_home_lato.png');
+  background-size:100% 100%;
+  background-repeat: no-repeat;
+  height:50vh;
+  width:20vw;
+  position:absolute;
+  z-index: 3;
+}
+      
+#siat_tasto_home{
+  background-image: url('immagini/siat_scritta.png');
+  background-size:auto 100%;
+  background-repeat: no-repeat;
+  position:fixed;
+  height: 3.7vh;
+  width:20vw;
+  z-index:2;
+  background-position: center;
+}
+      
+#siat_scritta{
+  background-image: url('immagini/siat_scritta.png');
+  background-size:auto 100%;
+  background-repeat: no-repeat;
+  position:fixed;
+  top:30vh;
+  background-position: 50% 50%;
+  height:35vh;
+  width:100%;
+  z-index: -2;
+}
+
+/* NAV */
+#nav{
+  background-color: #1a1a1a;
+  position:fixed;
+  height:3.7vh;
+  width:100%;
+  display:block;
+  z-index: 1;
+}
+    
+/* FRECCIA */
+.a {
+  color:white;
+  height: 3.7vh;
+  width: 20vw;
+  position:fixed;
+  text-align: center;
+  font-size:3.7vh;
+  margin-top:-1vh;
+  cursor: pointer;
+}
+#a2 {
+  left:20vw;
+}
+#a4 {
+  left:60vw;
+}
+#a5 {
+  left:80vw;
+}
+.a3 {
+  color:white;
+  height: 23.7vh;
+  width: 20vw;
+  left:40vw;
+  position:absolute;
+  top:80vh;
+  margin-top:-1vh;
+  text-decoration: none;
+}
+#informazioni{
+  color:white;
+  height: 3.7vh;
+  position:-webkit-sticky;
+  position:sticky;
+  top:-1vh;
+  text-align: center;
+  font-size:3.7vh;
+  cursor: pointer;
+  z-index: 1;
+}
+#freccia{
+  height:3.6vh;
+  width:3.6vh;;
+  border:solid white;
+  border-width: 0 0.46vh 0.46vh 0;
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  border-radius: 5px;
+  z-index: 0;
+  position: absolute;
+  left:calc(50% - 2vh);
+  cursor: pointer;
+  animation: mymove 3s infinite;
+  animation-direction: alternate;
+}
+@keyframes mymove {
+  from {top: 4vh;}
+  to {top: 7vh;}
+}
+
+#a1:hover, #a2:hover, #informazioni:hover, #a4:hover, #a5:hover{
+  transition:0.4s;
+  color:#E21B23;
+}
+
+/* FRECCIA */
+.a3:hover #freccia{
+  height:3.6vh;
+  width:3.6vh;;
+  border:solid #E21B23;
+  border-width: 0 0.46vh 0.46vh 0;
+  transition:0.4s;
+}
+.a3:hover #informazioni{
+  color:#E21B23;
+  transition:0.4s;
+}
+
+/*BURGER*/
+#menu-btn {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 3.7vh;
+  height: 3.7vh;
+  cursor: pointer;
+  transition: all .5s ease-in-out;
+  z-index: 4;
+}
+.menu {
+  width: 3.6vh;
+  height: 0.46vh;
+  background-color: white;
+  border-radius: 5px;
+  position:absolute;
+  transition: all .5s ease-in-out;
+  z-index: 1;
+}
+#menu1 {
+  opacity: 1;
+}
+#menu2 {
+  transform:translate3d(0vh, -1.2vh, 0vh) rotate(0deg);
+}
+#menu3 {
+  transform:translate3d(0vh, 1.2vh, 0vh) rotate(0deg);
+}
+/*.menu_1:hover #menu-btn{}*/
+.menu_1:hover #menu1 {
+  background-color: #E21B23;
+}
+.menu_1:hover #menu2 {
+  background-color: #E21B23;
+}
+.menu_1:hover #menu3 {
+  background-color: #E21B23;
+}
+
+/* TENDINA */
+#tendina {
+  padding-top: 2vh;
+  height:96.3vh;
+  width:20vw;
+  left:-20vw;
+  position:fixed;
+  top:3.7vh;
+  z-index:6;
+  background-color:#171717;
+  transition: all .5s ease-in-out;
+  display: flex;
+  flex-direction: column;
+}
+
+.link-tendina {     /*queste sono le scritte brutte della tendina*/
+  background-color: yellow;
+  color: white;
+  margin-left: 2vw;
+  margin-bottom: 0.5vh;
+  margin-top: 0.5vh;
+  font-size: 3.7vh;
+  cursor: pointer;
+  text-decoration: none;
+  opacity: 0;
+  transform: translateX(-5vw);
+  transition: all 1s ease-in-out;
+}
+
+.sottolink-tendina {  /*dai si capisce che è il pezzo sotto al normale link della tendina, dai per favore non ti lamentare baci, xoxo <3*/
+  background-color: green;
+  color: white;
+  text-decoration: none;
+  font-size: 2vh;
+  margin-left: 5vw;
+  opacity: 0;
+  transform: translateY(-5vh);
+  transition: all 1s ease-in-out;
+}
+
+
+/*.freccia-tendina1 {   questa è la freccietta della parte di "soluzioni"
+  position: absolute;
+  top: 26.8vh;
+  left: 1vw;
+  width: 2vw;
+  height: 12vh;
+}
+
+.freccia-tendina2 {   questa è la parte di "prodotti"
+  position: absolute;
+  top: 58vh;
+  left: 2vw;
+  width: 2vw;
+  height: 12vh;
+}*/
+
