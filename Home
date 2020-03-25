@@ -91,6 +91,7 @@ scroll-behavior: auto;
         font-size:3.7vh;
         margin-top:-1vh;
         cursor: pointer;
+        transition: all .5s ease-in-out
       }
       #a2{
         left:20vw;
@@ -110,6 +111,7 @@ scroll-behavior: auto;
         top:80vh;
         margin-top:-1vh;
         text-decoration: none;
+        transition: all .5s ease-in-out
       }
       #informazioni{
         color:white;
@@ -121,6 +123,7 @@ scroll-behavior: auto;
         font-size:3.7vh;
         cursor: pointer;
         z-index: 1;
+        transition: all .5s ease-in-out
       }
       #freccia{
         height:3.6vh;
@@ -136,6 +139,7 @@ scroll-behavior: auto;
         cursor: pointer;
         animation: mymove 3s infinite;
         animation-direction: alternate;
+        transition: all .5s ease-in-out
       }
       @keyframes mymove {
         from {top: 4vh;}
