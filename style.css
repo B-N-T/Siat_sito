@@ -86,7 +86,7 @@ body{
 }
     
 /* FRECCIA */
-.a{
+.a {
   color:white;
   height: 3.7vh;
   width: 20vw;
@@ -96,16 +96,16 @@ body{
   margin-top:-1vh;
   cursor: pointer;
 }
-#a2{
+#a2 {
   left:20vw;
 }
-#a4{
+#a4 {
   left:60vw;
 }
-#a5{
+#a5 {
   left:80vw;
 }
-.a3{
+.a3 {
   color:white;
   height: 23.7vh;
   width: 20vw;
@@ -151,7 +151,7 @@ body{
   color:#E21B23;
 }
 
-      /* FRECCIA */
+/* FRECCIA */
 .a3:hover #freccia{
   height:3.6vh;
   width:3.6vh;;
@@ -164,8 +164,8 @@ body{
   transition:0.4s;
 }
 
-      /*BURGER*/
-#menu-btn{
+/*BURGER*/
+#menu-btn {
   position: fixed;
   display: flex;
   justify-content: center;
@@ -176,7 +176,7 @@ body{
   transition: all .5s ease-in-out;
   z-index: 4;
 }
-.menu{
+.menu {
   width: 3.6vh;
   height: 0.46vh;
   background-color: white;
@@ -185,28 +185,30 @@ body{
   transition: all .5s ease-in-out;
   z-index: 1;
 }
-#menu1{
+#menu1 {
   opacity: 1;
 }
-#menu2{
+#menu2 {
   transform:translate3d(0vh, -1.2vh, 0vh) rotate(0deg);
 }
-#menu3{
+#menu3 {
   transform:translate3d(0vh, 1.2vh, 0vh) rotate(0deg);
 }
-/*.menu_1:hover #menu-btn{}*/
-.menu_1:hover #menu1{
+.menu_1:hover #menu1 {
   background-color: #E21B23;
 }
-.menu_1:hover #menu2{
+.menu_1:hover #menu2 {
   background-color: #E21B23;
 }
-.menu_1:hover #menu3{
+.menu_1:hover #menu3 {
   background-color: #E21B23;
 }
 
-/* TENDINA */
-#tendina{
+/*--------------------
+  tendina
+--------------------*/
+#tendina {
+  padding-top: 2vh;
   height:96.3vh;
   width:20vw;
   left:-20vw;
@@ -215,4 +217,63 @@ body{
   z-index:6;
   background-color:#171717;
   transition: all .5s ease-in-out;
+  display: flex;
+  flex-direction: column;
 }
+
+@media only screen and (max-width: 1280px) {  /*1280px*/
+  #tendina {
+    width: 25vw;
+    left: -25vw;
+  }
+}
+
+.link-tendina {   /*questo si riferisce a li del link principale*/
+  font-size: 3.7vh;
+  margin-left: 2vw;
+  margin-bottom: 0.5vh;
+  margin-top: 0.5vh;
+  margin-right: 1vw;
+  list-style-type: none;
+  transform: translateX(-5vw);
+  opacity: 0;
+  transition: all 1s ease-in-out;
+}
+
+.link-tendina a { /*questo si riferisce ad a del link principale*/
+  color: white;
+  text-decoration: none;
+  transition: all .3s ease-in-out;
+}
+
+.link-tendina a:hover {
+  color: #E21B23;
+}
+
+.sottolink-tendina { /*questo si riferisce a li della sottocategoria*/
+  font-size: 2vh;
+  color: white;
+  margin-left: 5vw;
+  margin-right: 1vw;
+  list-style-type: disc; 
+  opacity: 0;
+  transform: translateY(-5vh);
+  transition: all 1s ease-in-out;
+}
+
+.sottolink-tendina a { /*questo si riferisce ad a della sottocategoria*/
+  color: white;
+  text-decoration: none;
+  transition: all .3s ease-in-out;
+}
+
+.sottolink-tendina a:hover {
+  color:#E21B23;
+}
+
+.sottolink-tendina:hover {
+  color:#E21B23;
+  transition: all .3s ease-in-out;
+}
+
+/*TODO: da finire l'adattamento a diverse possibili risoluzioni e dimensioni*/
