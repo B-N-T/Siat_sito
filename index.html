@@ -24,12 +24,12 @@
       <div id="a1" class="a"></div>
       <div id="a2" class="a">Soluzioni</div>
       <div id="a4" class="a">Prodotti</div>
-      <div id="a5" class="a">Chi siamo</div>
+      <div id="a5"class="a">Chi siamo</div>
     </nav>
 
     <!-- FRECCIA -->
     <a class="a3"  onclick="fscroll()" href="#background2">
-      <div id="informazioni" >Info</div>
+      <div id="informazioni">Info</div>
       <div id="freccia" href="#background2"></div>
     </a>
     
@@ -41,10 +41,43 @@
     </div>
 
     <!-- TENDINA -->
-    <div id="tendina"></div>
+    <div id="tendina">  <!-- posso ottimizzare spostando la classe principale in "li" e utilizzare il gruppo a come ".classe a" -->
+      <ul>
+        <li class="link-tendina"><a href="#">Storia</a></li>
+        <li class="link-tendina"><a href="#">Applicazioni</a></li>
+        <li class="link-tendina"><a href="#">Vantaggi</a></li>
+        <li class="link-tendina"><a href="#">Soluzioni</a></li>
 
+        <li class="sottolink-tendina"><a href="#">Analisi e progettazione</a></li>
+        <li class="sottolink-tendina"><a href="#">Custom made solution</a></li>
+        <li class="sottolink-tendina"><a href="#">Team di specialisti</a></li>
+        <li class="sottolink-tendina"><a href="#">Rispetto per l'ambiente</a></li>
+
+        <li class="link-tendina"><a href="#">Prodotti</a></li>
+
+        <li class="sottolink-tendina"><a href="#">Recopack</a></li>
+        <li class="sottolink-tendina"><a href="#">Duplex</a></li>
+        <li class="sottolink-tendina"><a href="#">Calorpack</a></li>
+        <li class="sottolink-tendina"><a href="#">Firepack</a></li>
+
+        <li class="link-tendina"><a href="#">Chi Siamo</a></li>
+
+      </ul>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.1.0/anime.min.js" integrity="sha256-98Q574VkbV+PkxXCKSgL6jVq9mrVbS7uCdA+vt0sLS8=" crossorigin="anonymous"></script>
     <script src="app.js"></script>
 
   </body>
 
 </html>
+
+
+<!-- <svg class="freccia-tendina1" width="26" height="115" viewBox="0 0 26 115" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M0 115L0 0L1 0L1 115H0Z" stroke="white" stroke-width="1"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M26 25H1V24H26V25Z" stroke="white" stroke-width="1"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M26 55H1V54H26V55Z" stroke="white" stroke-width="1"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M26 85H1V84H26V85Z" stroke="white" stroke-width="1"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M26 115H1V114H26V115Z" stroke="white" stroke-width="1"/>
+</svg>
+ -->
