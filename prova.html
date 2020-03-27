@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="html">
+  <head>
+    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+    <meta charset="utf-8">
+    <style media="screen">
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    .html{
+scroll-behavior: auto;
+    }
+    body{
+      font-family: 'Poppins';
+        background-color: #1a1a1a;
+        background-image:url('immagini/sfondo_home2.png');
+      background-position: center;
+      background-attachment: fixed;
+      background-size: auto 100%;
+    }
+/* BACKGROUND */
+      #background1{
+        background-image:url('immagini/sfondo_home.png');
+        z-index: -3;
+        position: absolute;
+        background-position: center;
+        width: 100%;
+        background-size: auto 100vh;
+        height: 100vh;
+      }
+      #background2{
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top:100vh;
+      }
+
+      #siat_tasto_home{
+        background-image: url('immagini/siat_scritta.png');
+        background-size:auto 100%;
+        background-repeat: no-repeat;
+        position:fixed;
+        height: 3.7vh;
+        width:20vw;
+        z-index:2;
+        background-position: center;
+            }
+      #siat_scritta{
+        background-image: url('immagini/siat_scritta.png');
+        background-position: center;
+        position: absolute;
+        width:100%;
+        z-index: -2;
+        height: 30vh;
+        background-size: auto 30%;
+        background-repeat: no-repeat;
+        top:35vh;
+        background-attachment: fixed;
+      }
+  /* NAV */
+      #nav{
+        background-color: #1a1a1a;
+        position:fixed;
+        height:3.7vh;
+        width:100vw;
+        z-index: 1;
+        top:0px;
+      }
+      .a{
+        color:white;
+        height: 3.7vh;
+        width: 20vw;
+        position:fixed;
+        text-align: center;
+        font-size:3.7vh;
+        margin-top:-1vh;
+        cursor: pointer;
+        transition: all .5s ease-in-out
+      }
+      #a2{
+        left:20vw;
+      }
+      #a4{
+        left:60vw;
+      }
+      #a5{
+        left:80vw;
+      }
+    /* FRECCIA */
+      .a3{
+        color:white;
+        height: 100vh;
+        width: 10vw;
+        left:45vw;
+        position:absolute;
+        top:80vh;
+        margin-top:-1vh;
+        text-decoration: none;
+        transition: all .5s ease-in-out;
+        cursor: default;
+
+      }
+      #informazioni{
+        color:white;
+        height: 3.7vh;
+        width: 10vw;
+        position:-webkit-sticky;
+        position:sticky;
+        top:-1vh;
+        text-align: center;
+        font-size:3.7vh;
+        cursor: pointer;
+        z-index: 1;
+        transition: all .5s ease-in-out
+      }
+
+      #freccia{
+        height:3.6vh;
+        width:3.6vh;;
+        border:solid white;
+        border-width: 0 0.46vh 0.46vh 0;
+        transform: rotate(45deg);
+        -webkit-transform: rotate(45deg);
+        border-radius: 5px;
+        z-index: 0;
+        position: absolute;
+        left:calc(50% - 2vh);
+        cursor: pointer;
+        animation: mymove 2s infinite;
+        animation-direction: alternate;
+        transition: all .5s ease-in-out
+      }
+      @keyframes mymove {
+        from {top: 4vh;}
+        to {top: 6vh;}
+      }
+
+      #a1:hover, #a2:hover, #informazioni:hover, #a4:hover, #a5:hover{
+        transition:0.5s;
+        color:#E21B23;
+      }
+      /* HOVER */
+      .a3:hover #freccia{
+        border:solid #E21B23;
+        border-width: 0 0.46vh 0.46vh 0;
+        transition:0.5s;
+      }
+      .a3:hover #informazioni{
+        color:#E21B23;
+        transition:0.5s;
+      }
+
+      /*BURGER*/
+      #menu-btn{
+        position: fixed;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 3.7vh;
+        height: 3.7vh;
+        cursor: pointer;
+        transition: all .5s ease-in-out;
+        z-index: 4;
+      }
+      .menu{
+        width: 3.6vh;
+        height: 0.46vh;
+        background-color: white;
+        border-radius: 5px;
+        position:absolute;
+        transition: all .5s ease-in-out;
+        z-index: 1;
+      }
+      #menu1{
+        opacity: 1;
+      }
+      #menu2{
+        transform:translate3d(0vh, -1.2vh, 0vh) rotate(0deg);
+      }
+      #menu3{
+        transform:translate3d(0vh, 1.2vh, 0vh) rotate(0deg);
+      }
+      .menu_1:hover #menu-btn{}
+      .menu_1:hover #menu1{
+        background-color: #E21B23;
+      }
+      .menu_1:hover #menu2{
+        background-color: #E21B23;
+      }
+      .menu_1:hover #menu3{
+        background-color: #E21B23;
+      }
+/* TENDINA */
+      #tendina{
+        height:96.3vh;
+        width:20vw;
+        left:-20vw;
+        position:fixed;
+        top:3.7vh;
+        z-index:6;
+        background-color:#171717;
+        transition: all .5s ease-in-out;
+      }
+
+      #titolo1 {
+        font-size: 30px;
+        text-align: center;
+        margin-bottom: 3vh;
+      }
+
+      #testo1 {
+        margin-left: 3vw;
+        margin-right: 1vw;
+        z-index: 10;
+        color:white;
+        width: 40vw;
+        font-size: 20px;
+        text-align: justify;
+        transition: all .5s ease-in-out;
+        opacity: 0;
+        transform: translateY(-20px);
+        /*background-color: green;*/
+      }
+
+      #immagine1 {
+        background-image: url('immagini/qwerty.png');
+        height: 50vh;
+        margin: 3vh;
+        border-radius: 15px;
+        transition: all 0.5s ease-in-out;
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+
+      #colonna1 {
+        padding-top: 5vh;
+        padding-bottom: 5vh;
+        /*background-color: blue;*/
+        width: 50vw;
+        height: cover;
+        z-index: -1;
+      }
+
+      #immagine2{
+        background-image: url('immagini/qwerty.png');
+        top:7vh;
+        width:40vw;
+        height: 22.5vw;
+        position:absolute;
+        background-size: 100% auto;
+        background-position: top;
+        background-repeat: no-repeat;
+        right: 3vw;
+        border-radius: 15px;
+        z-index: 0;
+        transition: all 0.5s ease-in-out;
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+
+      #testo2{
+        /*height: 10vh;*/
+        z-index: 10;
+        color:white;
+        font-size: 20px;
+        position: absolute;
+        right: 3vw;
+        width:40vw;
+        top:60vh;
+        z-index: 0;
+        transition: all 0.5s ease-in-out;
+        opacity: 0;
+        transform: translateY(-20px);
+        background-color: green;
+      }
+
+      #more_info{
+        position: absolute;
+        bottom:13vh;
+        left:40vw;
+        width:20vw;
+        height: 3.7vh;
+        z-index: 11;
+        color:white;
+        font-size: 3.7vh;
+        text-align: center;
+        transition: all .5s ease-in-out;
+        cursor: pointer;
+        z-index: 12;
+        z-index: 0;
+        transition: all 0.5s ease-in-out;
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+      #more_info:hover{
+        transition:0.5s;
+        color:#E21B23;
+        transition: all 0.5s ease-in-out;
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+      .bold{
+        font-weight: bolder;
+      }
+    </style>
+
+    <title></title>
+  </head>
+  <body>
+<!-- BACKGROUND -->
+    <div id="background1"></div>
+    <div id="background2">
+
+      <div id="colonna1">
+        <!-- testo1 -->
+        <div id="testo1">
+          <p id="titolo1">Vantaggi</p>
+          <p class="testo1">La sempre più presente necessità di volgere lo sguardo verso uno sviluppo attento al rispetto e alla tutela dell’ambiente e la volontà di contribuire in modo significativo ad una gestione matura e responsabile dell’energia, hanno portato 
+          <p class="testo1" class="bold">SIAT</p> 
+          <p class="testo1">a concentrare ulteriormente la propria attività progettuale e costruttiva nel campo del recupero energetico.</p>
+          <p class="testo1" class="bold">Grazie alla sua storica esperienza e professionalità SIAT è in grado di offrire ai propri clienti la soluzione e il prodotto più adatto a soddisfare le diverse peculiarità di ogni impianto di destinazione.</p>
+          <p class="testo1">Ogni generatore, sia esso a fiamma o a recupero, è realizzato per durare nel tempo e permettere al cliente di ottenere eccellenti prestazioni e il massimo risparmio. L’elevato rendimento nella combustione o la possibilità di recuperare il calore già disponibile in uscita da processi industriali, comporta un vantaggio economico certo, tangibile e quantificabile, che contribuisce al rispetto e alla tutela dell’ambiente. La soluzione migliore per un risparmio fatto su misura.</p>
+        </div>
+        <!-- immagine1 -->
+        <div id="immagine1"></div>
+      </div>
+
+      <div id="colonna2">
+        <!-- testo2 -->
+        <div id="testo2">
+          <p class="testo2">SIAT sa fare la differenza quando si parla di risparmio, efficienza e tutela dell’ambiente. Tutti i suoi prodotti sono il risultato del lavoro di un team di professionisti che, con passione, mettono tutta la loro esperienza e competenza al servizio del cliente.<br>Offrire un prodotto di qualità e un servizio postvendita continuativo e professionale, è fondamentale e necessario per permettere al cliente un risparmio certo e duraturo nel tempo.<br>Ogni generatore viene pensato e progettato, sin dalle prime fasi, con l’obiettivo di garantire un rendimento costante che possa essere riscontrato in modo oggettivo ben al di là degli immediati tempi di collaudo.<br>I generatori SIAT sono spesso punti nevralgici nel delicato equilibrio di un impianto più esteso e complesso ed è per questo che vengono progettati e realizzati per garantire una costanza di rendimento nel tempo: la garanzia di un sicuro vantaggio economico da parte dell’utilizzatore, nel pieno rispetto dell’ambiente!</p><br>
+        </div>
+        <!-- immagine2 -->
+        <div id="immagine2"></div>
+      </div>
+
+
+
+      <div id="more_info">
+        More<br>Info
+      </div>
+    </div>
+    <div id="siat_tasto_home"></div>
+    <div id="siat_scritta"></div>
+<!-- NAV -->
+<nav id="nav">
+<div id="a1" class="a"></div>
+<div id="a2" class="a">Soluzioni</div>
+<div id="a4" class="a">Prodotti</div>
+<div id="a5" class="a">Chi siamo</div>
+</nav>
+<!-- FRECCIA -->
+<a class="a3"  onclick="fscroll()" href="#background2">
+<div id="informazioni" >Info</div>
+<div id="freccia" href="#background2"></div>
+</a>
+<div class="cont"></div>
+<!-- BURGER -->
+    <div class="menu_1" id="menu-btn" onclick="fburger()">
+    <div class="menu" id="menu1"></div>
+    <div class="menu" id="menu2"></div>
+    <div class="menu" id="menu3"></div>
+    </div>
+<!-- TENDINA -->
+<div id="tendina"></div>
+
+
+
+
+<script type="text/javascript">
+/* BURGER */
+ var y=document.querySelector("#menu2");
+ var x=document.querySelector("#menu3");
+ var z=document.querySelector("#menu1");
+ var k=document.querySelector("#tendina");
+ var c=0;
+ function fburger(){
+if(c%2===0){
+   y.style.transform="rotate(45deg)";
+   x.style.transform="rotate(-45deg)";
+   z.style.opacity=0;
+   x.style.backgroundColor="#E21B23";
+   y.style.backgroundColor="#E21B23";
+   z.style.backgroundColor="#E21B23";
+   k.style.left="0vw";
+ }
+else{
+y.style.transform="rotate(0deg)";
+x.style.transform="rotate(0deg)";
+z.style.opacity=1;
+x.style.transform="translate3d(0vh, 1.2vh, 0vh)";
+y.style.transform="translate3d(0vh, -1.2vh, 0vh)";
+x.style.backgroundColor="white";
+y.style.backgroundColor="white";
+z.style.backgroundColor="white";
+x.style="hover #E21B23";
+y.style="hover #E21B23";
+z.style="hover #E21B23";
+k.style.left="-20vw";
+}
+c++;
+}
+ /* scroll */
+ function fscroll(){
+document.querySelector(".html").style.scrollBehavior="smooth";
+}
+/* RESOLUTION */
+getResolution()
+var w;
+var h;
+function getResolution() {
+    w=screen.width;
+    h=screen.height;
+}
+
+/* SCROLL POSITION */
+function appear() {
+    var text = document.querySelector("#titolo1");
+    var introPosition = text.getBoundingClientRect().top;
+    var screenPosition = window.innerHeight/1.3;
+
+    if(introPosition < screenPosition) {
+      document.querySelector("#immagine1").style.opacity=1;
+      document.querySelector("#immagine1").style.transform="translateY(20px)";
+      text.style.opacity=1;
+      text.style.transform="translateY(0px)";
+      document.querySelector("#testo1").style.opacity=1;
+      document.querySelector("#testo1").style.transform="translateY(0px)";
+    }
+}
+window.addEventListener('scroll',appear);
+
+function appear2() {
+    var text1 = document.querySelector("#testo2");
+    var introPosition2 = text1.getBoundingClientRect().top;
+    var screenPosition2 = window.innerHeight/1.3;
+    if(introPosition2 < screenPosition2) {
+      text1.style.opacity=1;
+      text1.style.transform="translateY(0px)";
+      document.querySelector("#immagine2").style.opacity=1;
+      document.querySelector("#immagine2").style.transform="translateY(0px)";
+    }
+}
+window.addEventListener('scroll',appear2);
+
+</script>
+
+  </body>
+</html>
