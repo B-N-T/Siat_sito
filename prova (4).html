@@ -1,0 +1,771 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="html">
+  <head>
+    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'> <!-- POPPINS -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"> <!-- CARD FLIP -->
+    <meta charset="utf-8">
+    <style media="screen">
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    .html{
+scroll-behavior: auto;
+    }
+    body{
+      font-family: "SF Pro Text","Myriad Set Pro","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif;/*'Poppins'*/
+      background-color: #1a1a1a;
+      background-image:url('immagini/sfondo_home2.png');
+      background-position: center;
+      background-attachment: fixed;
+      font-weight: 1;
+    }
+/* BACKGROUND */
+      #background1{
+        background-image:url('immagini/sfondo_home.png');
+        z-index: -3;
+        position: absolute;
+        background-position: center;
+        width: 100%;
+        height: 100vh;
+        background-attachment: fixed;
+        opacity: 1;
+        transition: all 1s ease-in-out;
+      }
+      #background2{
+        width: 100%;
+        height: 100vh;
+        position: absolute;
+        top:100vh;
+        z-index: 2;
+      }
+
+      #background3{
+        background-image:url('immagini/sfondo_home.png');
+        z-index: 0;
+        background-attachment: fixed;
+        background-position: center;
+        width: 100%;
+        height: 100vh;
+        position: absolute;
+        top:100vh;
+        opacity: 1;
+        transition: all 1s ease-in-out;
+      }
+
+      #siat_scritta{
+        background-image: url('immagini/siat_scritta.png');
+        background-position: center;
+        position: absolute;
+        width:100%;
+        z-index: -2;
+        height: 30vh;
+        background-size: auto 100%;
+        background-repeat: no-repeat;
+        top:30vh;
+        z-index: 1;
+        /*background-attachment: fixed;*/
+      }
+  /* NAV */
+      #nav{
+      /*  background-color: #1a1a1a;*/
+        position:fixed;
+        height:3.7vh;
+        width:100vw;
+        z-index: 2;
+        top:0px;
+        background-color:#1a1a1a;
+        transition: all 1s ease-in-out;
+       }
+      .a{
+        color:white;
+        height: 3.2vh;
+        width: 20vw;
+        position:fixed;
+        text-align: center;
+        font-size:2.9vh;
+        margin-top:+0.2vh;
+        cursor: pointer;
+        transition: all .5s ease-in-out
+      }
+      #a1{
+        background-image: url('immagini/siat_scritta.png');
+        background-size:auto 100%;
+        background-repeat: no-repeat;
+        position:fixed;
+        background-position: center;
+        margin-top:0vh;
+        background-size: auto 90%;
+        opacity: 0;
+      }
+      #a2{
+        left:20vw;
+      }
+      #a4{
+        left:60vw;
+      }
+      #a5{
+        left:80vw;
+      }
+    /* FRECCIA */
+      .a3{
+        color:white;
+        height: 100vh;
+        width: 10vw;
+        left:45vw;
+        position:absolute;
+        top:80vh;
+        margin-top:-1vh;
+        text-decoration: none;
+        transition: all .5s ease-in-out;
+        cursor: default;
+      }
+      #informazioni{
+        color:white;
+        height: 3.7vh;
+        width: 10vw;
+        position:-webkit-sticky;
+        position:sticky;
+        top:+0.2vh;
+        text-align: center;
+        font-size:2.9vh;
+        cursor: pointer;
+        z-index: 3;
+        transition: all .5s ease-in-out;
+      }
+
+      #freccia{
+        height:3.6vh;
+        width:3.6vh;;
+        border:solid white;
+        border-width: 0 0.46vh 0.46vh 0;
+        transform: rotate(45deg);
+        -webkit-transform: rotate(45deg);
+        border-radius: 5px;
+        z-index: 0;
+        position: absolute;
+        left:calc(50% - 2vh);
+        cursor: pointer;
+        animation: mymove 2s infinite;
+        animation-direction: alternate;
+        transition: all .5s ease-in-out
+      }
+      @keyframes mymove {
+        from {top: 4vh;}
+        to {top: 6vh;}
+      }
+
+      #a1:hover, #a2:hover, #informazioni:hover, #a4:hover, #a5:hover{
+        transition:0.5s;
+        color:#E21B23;
+      }
+      /* HOVER */
+      .a3:hover #freccia{
+        border:solid #E21B23;
+        border-width: 0 0.46vh 0.46vh 0;
+        transition:0.5s;
+      }
+      .a3:hover #informazioni{
+        color:#E21B23;
+        transition:0.5s;
+      }
+
+      /*BURGER*/
+      #menu-btn{
+        position: fixed;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 3.7vh;
+        height: 3.7vh;
+        cursor: pointer;
+        transition: all .5s ease-in-out;
+        z-index: 4;
+      }
+      .menu{
+        width: 2.9vh;
+        height: 0.46vh;
+        background-color: white;
+        border-radius: 5px;
+        position:absolute;
+        transition: all .5s ease-in-out;
+        z-index: 1;
+      }
+      #menu1{
+        opacity: 1;
+      }
+      #menu2{
+        transform:translate3d(0vh, -0.95vh, 0vh) rotate(0deg);
+      }
+      #menu3{
+        transform:translate3d(0vh, 0.95vh, 0vh) rotate(0deg);
+      }
+      .menu_1:hover #menu-btn{}
+      .menu_1:hover #menu1{
+        background-color: #E21B23;
+      }
+      .menu_1:hover #menu2{
+        background-color: #E21B23;
+      }
+      .menu_1:hover #menu3{
+        background-color: #E21B23;
+      }
+/* TENDINA */
+#tendina {
+  padding-top: 2vh;
+  height:96.3vh;
+  width:20vw;
+  left:-20vw;
+  position:fixed;
+  top:3.7vh;
+  z-index:6;
+  background-color:#171717;
+  transition: all .5s ease-in-out;
+  display: flex;
+  flex-direction: column;
+}
+
+@media only screen and (max-width: 1280px) {  /*1280px*/
+  #tendina {
+    width: 25vw;
+    left: -25vw;
+  }
+}
+
+.link-tendina {   /*questo si riferisce a li del link principale*/
+  font-size: 3.2vh;
+  margin-left: 2vw;
+  margin-bottom: 0.5vh;
+  margin-top: 0.5vh;
+  margin-right: 1vw;
+  list-style-type: none;
+  transform: translateX(-5vw);
+  opacity: 0;
+  transition: all 1s ease-in-out;
+}
+
+.link-tendina a { /*questo si riferisce ad a del link principale*/
+  color: white;
+  text-decoration: none;
+  transition: all .25s ease-in-out;
+}
+
+.link-tendina a:hover {
+  color: #E21B23;
+}
+
+.sottolink-tendina { /*questo si riferisce a li della sottocategoria*/
+  font-size: 2vh;
+  color: white;
+  margin-left: 5vw;
+  margin-right: 1vw;
+  list-style-type: disc;
+  opacity: 0;
+  transform: translateY(-5vh);
+  transition: all 1s ease-in-out;
+}
+
+.sottolink-tendina a { /*questo si riferisce ad a della sottocategoria*/
+  color: white;
+  text-decoration: none;
+  transition: all .25s ease-in-out;
+}
+
+.sottolink-tendina a:hover {
+  color:#E21B23;
+}
+
+.sottolink-tendina:hover {
+  color:#E21B23;
+  transition: all .25s ease-in-out;
+}
+
+/* CARD */
+      #colonna1 {
+        top: 27vh;
+        width: 50%;
+        position: absolute;
+        display:flex;
+        flex-direction: row;
+        flex-flow: wrap;
+        justify-content: space-around;
+        z-index: -3;
+
+      }
+      .back{
+        transform: translateY(-220px);
+        position: absolute;
+          border-radius: 15px;
+          width:400px;
+          height: 200px;
+          margin: 20px;
+          color: white;
+          text-align: center;
+          font-size: 20px;
+          box-shadow: -10px 10px 20px rgba(0, 0, 0, 6);
+          z-index: -1;
+          transition: all 0.5s ease-in-out;
+          margin-left: auto;
+          margin-right: auto;
+      }
+      .front{
+        transition: 0.5s ease-in-out;
+        box-shadow: -20px 20px 20px;
+        background-color: #E2202C;
+        border-radius: 15px;
+        width:400px;
+        margin: 20px;
+        height: 370px;
+        z-index: 3;
+        transition: all 0.5s ease-in-out;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .front,.back{
+        overflow: hidden;
+      }
+      .card_back_scritte1{
+        margin: 3px;
+        margin-top: 9%;
+        color: white;
+        font-size: 25px;
+      }
+      .card_back_scritte2{
+        margin: 5px;
+        margin-top: 0%;
+      }
+      .button_card{
+        color: white;
+        font-size: 20px;
+        height: 50px;
+        width: 200px;
+        background-color: #272727;
+        border-radius: 15px;
+        cursor: pointer;
+        margin-top: 5%;
+        transition: all 0.5s ease-in-out;
+      }
+      .button_card2{
+        color: white;
+        font-size: 20px;
+        height: 50px;
+        width: 200px;
+        background-color: #1a1a1a;
+        border-radius: 15px;
+        cursor: pointer;
+        margin-top: 5%;
+        transition: all 0.5s ease-in-out;
+      }
+      .card{
+        margin: 40px;
+        transition: all 0.5s ease-in-out;
+        border-radius: 15px;
+        width:400px;
+        margin-bottom:200px;
+      }
+
+#FRONT1{
+}
+      #recopack{
+        border-radius: 15px;
+position: center;
+display: table-cell;
+margin-left: auto;
+margin-right: auto;
+      }
+      #recopack_img{
+        width:100%;
+        border-radius: 15px;
+position: center;
+display: table-cell;
+margin-left: auto;
+margin-right: auto;
+margin-top: 0px;
+      }
+      #BACK1{
+background-color: #1a1a1a;
+      }
+#FRONT2{
+}
+      #duplex{
+        border-radius: 15px;
+position: center;
+display: table-cell;
+margin-left: auto;
+margin-right: auto;
+      }
+      #duplex_img{
+        width:100%;
+        border-radius: 15px;
+position: center;
+display: table-cell;
+margin-left: auto;
+margin-right: auto;
+margin-top: 0px;
+      }
+      #BACK2{
+background-color: #1a1a1a;
+      }
+#FRONT3{
+}
+      #calorpack{
+        border-radius: 15px;
+position: center;
+display: table-cell;
+margin-left: auto;
+margin-right: auto;
+      }
+      #calorpack_img{
+        width:100%;
+        border-radius: 15px;
+position: center;
+display: table-cell;
+margin-left: auto;
+margin-right: auto;
+margin-top: 0px;
+      }
+      #BACK3{
+background-color: #272727;
+      }
+#FRONT4{
+}
+      #firepack{
+        border-radius: 15px;
+position: center;
+display: table-cell;
+margin-left: auto;
+margin-right: auto;
+      }
+      #firepack_img{
+        width:100%;
+        border-radius: 15px;
+position: center;
+display: table-cell;
+margin-left: auto;
+margin-right: auto;
+margin-top: 0px;
+      }
+      #BACK4{
+background-color: #272727;
+      }
+     #colonna2 {
+       top: 27vh;
+       width: 50%;
+       position: absolute;
+       display:flex;
+       flex-direction: row;
+       flex-flow: wrap;
+       justify-content: space-around;
+       right: 0px;
+       z-index: -2;
+      }
+
+  /*    .card:hover > #FRONT1{
+        transform: perspective(400px) rotateY(-180deg);
+      }
+      .card:hover > #FRONT2{
+        transform: perspective(400px) rotateY(-180deg);
+      }
+      .card:hover > #FRONT3{
+        transform: perspective(400px) rotateY(-180deg);
+      }
+      .card:hover > #FRONT4{
+        transform: perspective(400px) rotateY(-180deg);
+      }*/
+      .card:hover > .front{
+transform: scale(1.2);
+box-shadow: -10px 10px 20px rgba(0, 0, 0, 6);
+      }
+      .card:hover > .back{
+        box-shadow: -10px 10px 20px rgba(0, 0, 0, 6);
+                transform: translateY(0px);
+      }
+      .back:hover{
+        box-shadow: -10px 10px 20px rgba(0, 0, 0, 6);
+                transform: translateY(0px);
+      }
+      .button_card:hover{
+        background-color:#E2202C;
+      }
+      .button_card2:hover{
+        background-color:#E2202C;
+      }
+
+/* SCRITTA */
+.scritta{
+  transform: translateY(150px);
+  color:white;
+  text-align: left;
+  font-size: 50px;
+  margin-left: 30px;
+}
+#scritta1{
+  opacity: 0;
+  transition: all 1s ease-in-out;
+}
+#scritta2{
+  opacity: 0;
+  transition: all 1s ease-in-out;
+}
+/* VIDEO HOME */
+#video_home{
+position: absolute;
+top: 0;
+left: 0;
+object-fit: cover;
+width: 100%;
+height: 100%;
+opacity: 0.3;
+}
+    </style>
+
+    <title></title>
+  </head>
+  <body>
+<!-- BACKGROUND -->
+    <div id="background1">
+      <video autoplay muted id="video_home">
+        <source src="video/video_home.mp4" type="video/mp4">
+      </video>
+      <div id="siat_tasto_home"></div>
+      <div id="siat_scritta"></div>
+      <a class="a3"  onclick="fscroll()" href="#background2">
+      <div id="informazioni" >Info</div>
+      <div id="freccia" href="#background2"></div>
+      </a>
+    </div>
+    <div id="background2">
+      <div id="scritta1" class="scritta">
+        Cancel your concers,
+      </div>
+      <div id="scritta2" class="scritta">
+         let’s write the solution together.
+      </div>
+      <div id="colonna1">
+<div id="CARD1" class="card">
+        <div id="FRONT1" class="front">
+          <img id="recopack_img" src="immagini_potenziali/RPK.jpg">
+          <img id="recopack" src="immagini/recopack.png">
+        </div>
+        <div id="BACK1" class="back">
+          <p class="card_back_scritte1">RECOPACK</p>
+          <p class="card_back_scritte2">Versatile e installabile in ogni tipo di impianto.</p>
+          <input type="button" name="" value="learn more" class="button_card">
+        </div>
+</div>
+<div id="CARD2" class="card">
+        <div id="FRONT2" class="front">
+          <img id="duplex_img" src="immagini_potenziali/DUPLEX.jpg">
+          <img id="duplex" src="immagini/duplex.png">
+        </div>
+        <div id="BACK2" class="back">
+          <p class="card_back_scritte1">DUPLEX</p>
+          <p class="card_back_scritte2">La perfetta combinazione dei generatori RECOPACK e CALORPACK.</p>
+          <input type="button" name="" value="learn more" class="button_card">
+        </div>
+</div>
+    </div>
+      <div id="colonna2">
+<div id="CARD3" class="card">
+        <div id="FRONT3" class="front">
+          <img id="calorpack_img" src="immagini_potenziali/CPK.jpg">
+          <img id="calorpack" src="immagini/calorpack.png">
+        </div>
+        <div id="BACK3" class="back">
+          <p class="card_back_scritte1">CALORPACK</p>
+          <p class="card_back_scritte2">La coniugazione di efficienza, sicurezza e rendimento.</p>
+          <input type="button" name="" value="learn more" class="button_card2">
+        </div>
+</div>
+<div id="CARD4" class="card">
+        <div id="FRONT4" class="front">
+          <img id="firepack_img" src="immagini_potenziali/FPK.jpg">
+          <img id="firepack" src="immagini/firepack.png">
+        </div>
+        <div id="BACK4" class="back">
+          <p class="card_back_scritte1">FIREPACK</p>
+          <p class="card_back_scritte2">La sintesi di una vasta esperienza delle caldaie a fluido diatermico.</p>
+          <input type="button" name="" value="learn more" class="button_card2">
+        </div>
+</div>
+      </div>
+  </section>
+
+<div id="background3"></div>
+
+<!-- NAV -->
+<nav id="nav">
+<div id="a1" class="a"></div>
+<div id="a2" class="a">Soluzioni</div>
+<div id="a4" class="a">Prodotti</div>
+<div id="a5" class="a">Chi siamo</div>
+</nav>
+<!-- FRECCIA -->
+
+<div class="cont"></div>
+<!-- BURGER -->
+    <div class="menu_1" id="menu-btn" onclick="fburger()">
+    <div class="menu" id="menu1"></div>
+    <div class="menu" id="menu2"></div>
+    <div class="menu" id="menu3"></div>
+    </div>
+<!-- TENDINA -->
+<div id="tendina">  <!-- posso ottimizzare spostando la classe principale in "li" e utilizzare il gruppo a come ".classe a" -->
+  <ul>
+    <li class="link-tendina"><a href="#">Storia</a></li>
+    <li class="link-tendina"><a href="#">Applicazioni</a></li>
+    <li class="link-tendina"><a href="#">Vantaggi</a></li>
+    <li class="link-tendina"><a href="#">Soluzioni</a></li>
+
+    <li class="sottolink-tendina"><a href="#">Analisi e progettazione</a></li>
+    <li class="sottolink-tendina"><a href="#">Custom made solution</a></li>
+    <li class="sottolink-tendina"><a href="#">Team di specialisti</a></li>
+    <li class="sottolink-tendina"><a href="#">Rispetto per l'ambiente</a></li>
+    <li class="sottolink-tendina"><a href="#">Certificazioni</a></li>
+
+    <li class="link-tendina"><a href="#">Prodotti</a></li>
+
+    <li class="sottolink-tendina"><a href="#">Recopack</a></li>
+    <li class="sottolink-tendina"><a href="#">Duplex</a></li>
+    <li class="sottolink-tendina"><a href="#">Calorpack</a></li>
+    <li class="sottolink-tendina"><a href="#">Firepack</a></li>
+
+    <li class="link-tendina"><a href="#">Chi Siamo</a></li>
+  </ul>
+</div>
+<script type="text/javascript">
+/* BURGER */
+var y=document.querySelector("#menu2");
+var x=document.querySelector("#menu3");
+var z=document.querySelector("#menu1");
+var tendina=document.querySelector("#tendina");
+
+var c=0;
+var i=0;
+
+var linkTendina = document.querySelectorAll('.link-tendina');
+var sottoLinkTendina = document.querySelectorAll('.sottolink-tendina');
+console.log(linkTendina);
+
+var frecciaTendina1 = document.querySelectorAll('.freccia-tendina1 path');
+var frecciaTendina2 = document.querySelectorAll('.freccia-tendina2 path');
+
+function fburger(){
+	if(c%2===0){
+   		y.style.transform="rotate(45deg)";
+   		x.style.transform="rotate(-45deg)";
+   		z.style.opacity=0;
+   		x.style.backgroundColor="#E21B23";
+   		y.style.backgroundColor="#E21B23";
+   		z.style.backgroundColor="#E21B23";
+   		tendina.style.left="0vw";
+
+   		for(i=0;i<linkTendina.length;i++) {			//animazione per le scritte all'interno della tendina all'apertura
+			linkTendina[i].style.opacity = "1";
+			linkTendina[i].style.transform = "translateX(0)";
+		}
+ 	for(i=0;i<sottoLinkTendina.length;i++) {			//animazione per le sottoscritte all'interno della tendina all'apertura
+			sottoLinkTendina[i].style.opacity = "1";
+			sottoLinkTendina[i].style.transform = "translateY(0)";
+		}
+	}
+	else{
+		y.style.transform="rotate(0deg)";
+		x.style.transform="rotate(0deg)";
+		z.style.opacity=1;
+		x.style.transform="translate3d(0vh, 1.2vh, 0vh)";
+		y.style.transform="translate3d(0vh, -1.2vh, 0vh)";
+		x.style.backgroundColor="white";
+		y.style.backgroundColor="white";
+		z.style.backgroundColor="white";
+		x.style="hover #E21B23";
+		y.style="hover #E21B23";
+		z.style="hover #E21B23";
+		tendina.style.left="-25vw";
+
+		for(i=0;i<linkTendina.length;i++) {			//animazione per le scritte all'interno della tendina alla chiusura
+			linkTendina[i].style.opacity = "0";
+			linkTendina[i].style.transform = "translateX(-5vw)"
+		}
+
+		for(i=0;i<sottoLinkTendina.length;i++) {			//animazione per le sottoscritte all'interno della tendina all'apertura
+			sottoLinkTendina[i].style.opacity = "0";
+			sottoLinkTendina[i].style.transform = "translateY(-5vh)";
+		}
+	}
+	c++;
+}
+
+ /* scroll */
+ function fscroll(){
+document.querySelector(".html").style.scrollBehavior="smooth";
+}
+/* RESOLUTION */
+getResolution();
+var w;
+var h;
+function getResolution() {
+    w=screen.width;
+    h=screen.height;
+    var o = (20*h)/1440;
+    document.querySelector("#background1").style.backgroundSize = w+"px " + "100vh";
+    document.querySelector("#background3").style.backgroundSize = w+"px " + "100vh";
+    document.querySelector("body").style.backgroundSize = w+"px " + "100vh";
+}
+/* SCROLL POSITION */
+
+
+function appear() {
+    var screenPosition = window.innerHeight/1.3;
+    var introPosition = informazioni.getBoundingClientRect().top;;
+    if(introPosition < screenPosition) {
+      document.querySelector("#informazioni").style.color = "#E21B23";
+      document.querySelector("#siat_tasto_home").style.opacity=1;
+    }
+    else {
+      document.querySelector("#informazioni").style.color = "white";
+      document.querySelector("#informazioni").style="hover #E21B23";
+      document.querySelector("#siat_tasto_home").style.opacity=0;
+    }
+}
+window.addEventListener('scroll',appear);
+
+ function appear2() {
+    var introPosition2 = scritta1.getBoundingClientRect().top;
+    var screenPosition2 = window.innerHeight/1.3;
+    if(introPosition2 < screenPosition2) {
+      document.querySelector("#scritta1").style.opacity=1;
+      setTimeout(scritta2,1000);
+    }
+}
+function scritta2(){
+  document.querySelector("#scritta2").style.opacity=1;
+
+}
+
+
+window.addEventListener('scroll',appear2);
+function appear3() {
+    var introPosition3 = background1.getBoundingClientRect().top;
+    if(introPosition3 != 0) {
+      document.querySelector("#background1").style.opacity=0;
+      document.querySelector("#background3").style.opacity=0;
+      document.querySelector("#freccia").style.opacity=0;
+      document.querySelector("#a1").style.opacity=1;
+      document.querySelector("#nav").style.backgroundColor="#292929";
+    }
+    else{
+      document.querySelector("#background1").style.opacity=1;
+      document.querySelector("#background3").style.opacity=1;
+      document.querySelector("#freccia").style.opacity=1;
+      document.querySelector("#a1").style.opacity=0;
+      document.querySelector("#nav").style.backgroundColor="#1a1a1a";
+    }
+}
+window.addEventListener('scroll',appear3);
+
+</script>
+
+  </body>
+</html>
